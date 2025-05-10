@@ -63,7 +63,7 @@ export default function AppSidebar() {
   const pathname = usePathname();
   const { isOpen } = useMediaQuery();
 
-  const user=null
+  const user={fullName:"Super Admin"}
   const router = useRouter();
   const handleSwitchTenant = (_tenantId: string) => {
     // Tenant switching functionality would be implemented here
@@ -189,10 +189,10 @@ export default function AppSidebar() {
                     <IconUserCircle className='mr-2 h-4 w-4' />
                     Profile
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
+                  {/* <DropdownMenuItem>
                     <IconCreditCard className='mr-2 h-4 w-4' />
                     Billing
-                  </DropdownMenuItem>
+                  </DropdownMenuItem> */}
                   <DropdownMenuItem>
                     <IconBell className='mr-2 h-4 w-4' />
                     Notifications
@@ -201,7 +201,16 @@ export default function AppSidebar() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <IconLogout className='mr-2 h-4 w-4' />
-                  {/* <SignOutButton redirectUrl='/auth/sign-in' /> */}
+                     <Link
+              href='/auth/sign-in'
+              className='w-full'
+              onClick={() => {
+                // signOut();
+                router.push('/auth/sign-in');
+              }}
+            >
+              Sign out
+            </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

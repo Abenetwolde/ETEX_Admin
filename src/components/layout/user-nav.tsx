@@ -9,8 +9,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
+import Link from 'next/link';
 
 import { useRouter } from 'next/navigation';
+import { UserAvatarProfile } from '../user-avatar-profile';
 export function UserNav() {
   const  user  = null
   const router = useRouter();
@@ -19,7 +21,7 @@ export function UserNav() {
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
-            {/* <UserAvatarProfile user={user} /> */}
+            <UserAvatarProfile user={{ fullName:"Super Admin"}} />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent
@@ -43,12 +45,22 @@ export function UserNav() {
             <DropdownMenuItem onClick={() => router.push('/dashboard/profile')}>
               Profile
             </DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
+            {/* <DropdownMenuItem>Billing</DropdownMenuItem>
             <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>New Team</DropdownMenuItem>
+            <DropdownMenuItem>New Team</DropdownMenuItem> */}
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
+            <Link
+              href='/auth/sign-in'
+              className='w-full'
+              onClick={() => {
+                // signOut();
+                router.push('/auth/sign-in');
+              }}
+            >
+              Sign out
+            </Link>
             {/* <SignOutButton redirectUrl='/auth/sign-in' /> */}
           </DropdownMenuItem>
         </DropdownMenuContent>

@@ -5,7 +5,7 @@ import { RootState } from './store';
 export const usersApi = createApi({
   reducerPath: 'usersApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://172.20.83.54:3000/', // Replace with your backend API URL
+    baseUrl: 'http://172.20.137.159:4000/', // Replace with your backend API URL
     prepareHeaders: (headers, { getState }) => {
       const token = (getState() as RootState).admin.token;
       if (token) {

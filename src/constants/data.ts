@@ -21,14 +21,14 @@ export const navItems: NavItem[] = [
     shortcut: ['d', 'd'],
     items: [] // Empty array as there are no child items for Dashboard
   },
-  {
-    title: 'Participants Dashboard',
-    url: '/dashboard/participants',
-    icon: 'dashboard',
-    isActive: false,
-    shortcut: ['d', 'd'],
-    items: [] // Empty array as there are no child items for Dashboard
-  },
+  // {
+  //   title: 'Participants Dashboard',
+  //   url: '/dashboard/participants',
+  //   icon: 'dashboard',
+  //   isActive: false,
+  //   shortcut: ['d', 'd'],
+  //   items: [] // Empty array as there are no child items for Dashboard
+  // },
   {
     title: 'Mini Prizes',
     url: '/dashboard/miniprize',
